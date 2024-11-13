@@ -34,7 +34,6 @@ jobs:
 
       - name: Deploy to minikube
         run: |
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
           kubectl apply -f k8s/features/namespace.yaml
           kubectl apply -f k8s/features/deployment.yaml
           kubectl apply -f k8s/features/services.yaml
