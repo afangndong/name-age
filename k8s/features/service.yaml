@@ -1,1 +1,12 @@
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: name-age-service
+  namespace: name-age
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    targetPort: 5000
+  selector:
+    app: name-age-app
