@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: name-age-app
+  namespace: name-age
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: name-age-app
+  template:
+    metadata:
+      labels:
+        app: name-age-app
+    spec:
+      containers:
+      - name: name-age-app
+        image: afangndong/name-age-app:latest
+        ports:
+        - containerPort: 5000
